@@ -37,10 +37,9 @@ class BrailleConverter
     end
   end
 
-
   def braille_output
-    doc_char
+    line_one 
+    line_two
+    line_three
   end
-
-
 end
