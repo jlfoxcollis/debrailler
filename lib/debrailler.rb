@@ -1,7 +1,7 @@
 require_relative './braille_data'
 
 class Debrailler
-  attr_reader :braille_in
+  attr_reader :braille_in, :compiled_braille, :line_one
 
   def initialize(braille_in)
     @braille = BrailleData.new
@@ -10,6 +10,7 @@ class Debrailler
     @line_one = ""
     @line_two = ""
     @line_three = ""
+    @compiled_braille = []
   end
 
   def compiler
@@ -29,8 +30,15 @@ class Debrailler
 
 
   def braille_output
-
+    one = @line_one
+    two = @line_two
+    three = @line_three
+    until one.length == 0
+      compiled_lines = []
+      compiled_lines << one.slice!(0..1)
+      compiled_lines << two.slice!(0..1)
+      compiled_lines << three.slice!(0..1)
+      @compiled_braille << compiled_lines
+    end
   end
-
-
 end

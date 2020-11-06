@@ -26,4 +26,10 @@ class DebraillerTest < MiniTest::Test
     assert_equal expected, @debrailler.braille_reverter
   end
 
+  def test_braille_output
+    expected = []
+    @debrailler.braille_reverter
+    binding.pry
+    assert_equal expected, @debrailler.braille_output
+  end
 end
