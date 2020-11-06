@@ -15,7 +15,7 @@ class DebraillerTest < MiniTest::Test
   end
 
   def test_doc_char
-    expected = 
+    expected = ["d", "e", "c", "o", "d", "e", " ", "m", "e"]
     assert_equal expected, @brailleconv.doc_char
   end
 end
