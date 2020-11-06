@@ -14,32 +14,40 @@ class BrailleConverter
   end
 
   def braille_converter
-    doc_char.map do |char|
-      braille.txt[char]
+    compiled = []
+    doc_char.each do |char|
+      if char === char.capitalize && ("A".."Z").to_a.include?(char) then
+        compiled << braille.txt[:caps]
+        compiled << braille.txt[char.downcase]
+      else
+        compiled << braille.txt[char.downcase]
+      end
     end
+    compiled
   end
 
   def line_one
-    braille_converter.flat_map do |char|
-      char[0]
+    braille_converter.reduce("") do |final, char|
+      final << char[0]
     end
   end
 
   def line_two
-    braille_converter.flat_map do |char|
-      char[1]
+    braille_converter.reduce("") do |final, char|
+      final << char[1]
     end
   end
 
   def line_three
-    braille_converter.flat_map do |char|
-      char[2]
+    braille_converter.reduce("") do |final, char|
+      final << char[2]
     end
   end
 
   def braille_output
-    line_one 
-    line_two
-    line_three
+    @text_out << line_one.slice!(0..79) + "  " + "\n"
+    @text_out << line_two.slice!(0..79) + "  " + "\n"
+    @text_out << line_three.slice!(0..79) + "  " + "\n"
+    @text_out.join
   end
 end
