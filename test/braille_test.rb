@@ -9,7 +9,7 @@ class Braille < MiniTest::Test
 
   def test_numbers
     assert_equal [".0", "00", ".."], @braille.txt["0"]
-    assert_equal [".0", "00", ".."], @braille.txt["1"]
+    assert_equal ["0.", "..", ".."], @braille.txt["1"]
     assert_equal [".0", "00", ".."], @braille.txt["2"]
     assert_equal [".0", "00", ".."], @braille.txt["3"]
     assert_equal [".0", "00", ".."], @braille.txt["4"]
@@ -17,8 +17,7 @@ class Braille < MiniTest::Test
     assert_equal [".0", "00", ".."], @braille.txt["6"]
     assert_equal [".0", "00", ".."], @braille.txt["7"]
     assert_equal [".0", "00", ".."], @braille.txt["8"]
-    assert_equal [".0", "00", ".."], @braille.txt["9"]
-
+    assert_equal [".0", "00", ".."], @braille.txt["9"]\
   end
 
 end
