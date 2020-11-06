@@ -10,4 +10,4 @@ converter = BrailleConverter.new(input_data)
 output = File.open(file_out, 'w')
 output.write(converter.braille_output)
 
-puts "Created #{file_out} containing #{converter.doc_char.length} characters."
+puts "Created #{file_out} containing #{converter.text_in.length} characters."

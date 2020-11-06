@@ -1,9 +1,9 @@
-class Braille
+class BrailleData
 
   def initialize
   end
 
-  def braille_hash
+  def txt
     {
       " " => ["..", "..", ".."],
       "a" => ["0.", "..", ".."],
@@ -49,5 +49,6 @@ class Braille
       "." => ["..", "00", ".0"],
       "?" => ["..", "0.", "00"],
       "Capital" => ["..", "..", ".0"]
+    }
     end
 end
