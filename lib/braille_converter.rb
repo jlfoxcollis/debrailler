@@ -45,9 +45,9 @@ class BrailleConverter
   end
 
   def braille_output
-    @text_out << line_one.slice!(0..79) + "  " + "\n"
-    @text_out << line_two.slice!(0..79) + "  " + "\n"
-    @text_out << line_three.slice!(0..79) + "  " + "\n"
+    @text_out << line_one.slice!(0..79) + "\n"
+    @text_out << line_two.slice!(0..79) + "\n"
+    @text_out << line_three.slice!(0..79) + "\n"
     @text_out.join
   end
 end

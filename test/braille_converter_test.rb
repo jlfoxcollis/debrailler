@@ -34,12 +34,12 @@ class DebraillerTest < MiniTest::Test
   end
 
   def test_line_two
-    expected = [".0", ".0", "..", ".0", ".0", ".0", "..", "..", ".0"]
+    expected = ".0.0...0.0.0.....0"
     assert_equal expected, @brailleconv.line_two
   end
 
   def test_line_three
-    expected = ["..", "..", "..", "0.", "..", "..", "..", "0.", ".."]
+    expected = "......0.......0..."
     assert_equal expected, @brailleconv.line_three
   end
 
@@ -49,5 +49,13 @@ class DebraillerTest < MiniTest::Test
 
     expected = [["..", "..", ".0"], ["0.", "0.", ".."], ["0.", "0.", ".."]]
     assert_equal expected, brailleconv.braille_converter
+  end
+
+  def test_braille_output
+    expected = "000.000.000...000.
+.0.0...0.0.0.....0
+......0.......0...
+"
+    assert_equal expected, @brailleconv.braille_output
   end
 end
