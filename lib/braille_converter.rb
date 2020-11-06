@@ -26,13 +26,14 @@ class BrailleConverter
   end
 
   def line_two
-    braille_converter.map do |char|
+    braille_converter.flat_map do |char|
       char[1]
     end
   end
 
   def line_three
-    braille_converter.map do |char|
+    braille_converter.flat_map do |char|
+      char[2]
     end
   end
 
