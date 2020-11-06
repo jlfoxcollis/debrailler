@@ -19,6 +19,23 @@ class BrailleConverter
     end
   end
 
+  def line_one
+    braille_converter.flat_map do |char|
+      char[0]
+    end
+  end
+
+  def line_two
+    braille_converter.map do |char|
+      char[1]
+    end
+  end
+
+  def line_three
+    braille_converter.map do |char|
+    end
+  end
+
 
   def braille_output
     doc_char

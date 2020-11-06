@@ -27,4 +27,11 @@ class DebraillerTest < MiniTest::Test
                 ["0.", ".0", ".."]]
     assert_equal expected, @brailleconv.braille_converter
   end
+
+  def test_line_one
+    expected = ["00", "0.", "00", "0.", "00", "0.", "..", "00", "0."]
+    assert_equal expected, @brailleconv.line_one
+  end
+
+  
 end
