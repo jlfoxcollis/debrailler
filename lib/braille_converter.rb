@@ -9,7 +9,7 @@ class BrailleConverter
     @text_out = []
   end
 
-  def doc_char #
+  def doc_char
     text_in.chars
   end
 
