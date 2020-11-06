@@ -1,9 +1,21 @@
 require './test/test_helper'
-require './lib/debrailler'
+require './lib/braille_converter'
 
 class DebraillerTest < MiniTest::Test
 
+  def setup
+    message = "decode me"
+    @brailleconv = BrailleConverter.new(message)
+  end
+
   def test_it_exists
 
+    assert_equal "decode me", @brailleconv.text_in
+    assert_equal [], @brailleconv.text_out
+  end
+
+  def test_doc_char
+    expected = 
+    assert_equal expected, @brailleconv.doc_char
   end
 end

@@ -50,5 +50,5 @@ class BrailleData
       "?" => ["..", "0.", "00"],
       "Caps" => ["..", "..", ".0"]
     }
-    end
+  end
 end

@@ -1,6 +1,95 @@
 {
   "Unit Tests": {
     "coverage": {
+      "/Users/james/turing/mod1/debrailler/lib/braille_converter.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          2,
+          2,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/james/turing/mod1/debrailler/test/braille_test.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          3,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/james/turing/mod1/debrailler/lib/braille_data.rb": {
         "lines": [
           1,
@@ -58,8 +147,13 @@
           null,
           null
         ]
+      },
+      "/Users/james/turing/mod1/debrailler/test/night_writer_test.rb": {
+        "lines": [
+
+        ]
       }
     },
-    "timestamp": 1604624511
+    "timestamp": 1604625574
   }
 }
