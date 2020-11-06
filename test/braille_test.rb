@@ -17,7 +17,7 @@ class Braille < MiniTest::Test
     assert_equal ["00", "0.", ".."], @braille.txt["6"]
     assert_equal ["00", "00", ".."], @braille.txt["7"]
     assert_equal ["0.", "00", ".."], @braille.txt["8"]
-    assert_equal [".0", "0.", ".."], @braille.txt["9"]\
+    assert_equal [".0", "0.", ".."], @braille.txt["9"]
   end
 
   def test_characters
@@ -27,7 +27,7 @@ class Braille < MiniTest::Test
     assert_equal ["..", "..", "00"], @braille.txt["-"]
     assert_equal ["..", "00", ".0"], @braille.txt["."]
     assert_equal ["..", "0.", "00"], @braille.txt["?"]
-    assert_equal ["..", "..", ".0"], @braille.txt["Caps"]
+    assert_equal ["..", "..", ".0"], @braille.txt[:caps]
     assert_equal ["..", "..", ".."], @braille.txt[" "]
   end
 
