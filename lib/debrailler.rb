@@ -7,9 +7,9 @@ class Debrailler
     @braille = BrailleData.new
     @braille_in = braille_in
     @text_out = []
-    @line_one = []
-    @line_two = []
-    @line_three = []
+    @line_one = ""
+    @line_two = ""
+    @line_three = ""
   end
 
   def compiler
@@ -18,13 +18,18 @@ class Debrailler
 
   def braille_reverter
     length = ((braille_in.length - 1) /3 )
-    one = compiler.slice!(0..length)
-    two = compiler.slice!(0..length)
-    three = compiler.slice!(0..length)
+    @line_one << compiler.slice!(0..length)
+    @line_one.slice!(-1)
+    @line_two << compiler.slice!(0..length)
+    @line_two.slice!(-1)
+    @line_three << compiler.slice!(0..length)
+    @line_three.slice!(-1)
+    [@line_one, @line_two, @line_three]
   end
 
 
   def braille_output
+
   end
 
 

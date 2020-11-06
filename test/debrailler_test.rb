@@ -21,7 +21,7 @@ class DebraillerTest < MiniTest::Test
   end
 
   def test_braille_reverter
-    expected = []
+    expected = ["000.000.000...000.", ".0.0...0.0.0.....0", "......0.......0..."]
 
     assert_equal expected, @debrailler.braille_reverter
   end
