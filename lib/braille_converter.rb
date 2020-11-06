@@ -1,14 +1,24 @@
+require_relative './braille_data'
+
 class BrailleConverter
-  attr_reader :text_in, :text_out
+  attr_reader :text_in, :text_out, :braille
 
   def initialize(text_in)
+    @braille = BrailleData.new
     @text_in = text_in
     @text_out = []
   end
 
-  def doc_char
+  def doc_char #
     text_in.chars
   end
+
+  def braille_converter
+    doc_char.map do |char|
+      braille.txt[char]
+    end
+  end
+
 
   def braille_output
     doc_char

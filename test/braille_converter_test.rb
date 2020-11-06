@@ -18,4 +18,13 @@ class DebraillerTest < MiniTest::Test
     expected = ["d", "e", "c", "o", "d", "e", " ", "m", "e"]
     assert_equal expected, @brailleconv.doc_char
   end
+
+  def test_braille_converter
+    expected = [["00", ".0", ".."], ["0.", ".0", ".."],
+                ["00", "..", ".."], ["0.", ".0", "0."],
+                ["00", ".0", ".."], ["0.", ".0", ".."],
+                ["..", "..", ".."], ["00", "..", "0."],
+                ["0.", ".0", ".."]]
+    assert_equal expected, @brailleconv.braille_converter
+  end
 end
