@@ -27,9 +27,16 @@ class DebraillerTest < MiniTest::Test
   end
 
   def test_braille_output
-    expected = []
     @debrailler.braille_reverter
-    binding.pry
+    expected = [["00", ".0", ".."],
+                ["0.", ".0", ".."],
+                ["00", "..", ".."],
+                ["0.", ".0", "0."],
+                ["00", ".0", ".."],
+                ["0.", ".0", ".."],
+                ["..", "..", ".."],
+                ["00", "..", "0."],
+                ["0.", ".0", ".."]]
     assert_equal expected, @debrailler.braille_output
   end
 end

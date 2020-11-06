@@ -1,7 +1,7 @@
 require './test/test_helper'
 require './lib/braille_converter'
 
-class DebraillerTest < MiniTest::Test
+class BrailleConverterTest < MiniTest::Test
 
   def setup
     message = "decode me"

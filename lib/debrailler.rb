@@ -40,5 +40,6 @@ class Debrailler
       compiled_lines << three.slice!(0..1)
       @compiled_braille << compiled_lines
     end
+    @compiled_braille
   end
 end
