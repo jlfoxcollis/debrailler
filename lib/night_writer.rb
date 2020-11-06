@@ -1,5 +1,4 @@
 require './lib/braille_converter'
-require 'pp'
 
 file_in = ARGV[0]
 file_out = ARGV[1]
