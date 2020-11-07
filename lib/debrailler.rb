@@ -14,17 +14,20 @@ class Debrailler
   end
 
   def compiler
-    braille_in
+    braille_in.flat_map do |line|
+      line.chomp
+    end.join
   end
 
   def braille_reverter
-    length = ((braille_in.length - 1) /3 )
-    @line_one << compiler.slice!(0..length)
-    @line_one.slice!(-1)
-    @line_two << compiler.slice!(0..length)
-    @line_two.slice!(-1)
-    @line_three << compiler.slice!(0..length)
-    @line_three.slice!(-1)
+    compiled = compiler
+    length = ((compiler.length - 1) /3 )
+    @line_one << compiled.slice!(0..length)
+    # @line_one.slice!(-1)
+    @line_two << compiled.slice!(0..length)
+    # @line_two.slice!(-1)
+    @line_three << compiled.slice!(0..length)
+    # @line_three.slice!(-1)
     [@line_one, @line_two, @line_three]
   end
 
@@ -60,11 +63,18 @@ class Debrailler
          caps << match
       elsif !caps.empty?
         caps.clear
-        keeps << reverse_num[match].capitalize
+        # require 'pry'; binding.pry
+        a = reverse_txt[match]
+        keeps << a.upcase
       elsif match ==  [".0", ".0", "00"]
         nums << match
+      elsif !nums.empty? && match == ["..", "..", ".."]
+        nums.clear
+        keeps << @braille.txt.key(match)
       elsif !nums.empty?
-        keeps << reverse_num[match]
+        keeps << @braille.num.key(match)
+      else
+        keeps << @braille.txt.key(match)
       end
     end
     keeps.join
