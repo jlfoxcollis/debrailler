@@ -47,7 +47,16 @@ class BrailleConverterTest < MiniTest::Test
     message = "B2"
     brailleconv = BrailleConverter.new(message)
 
-    expected = [["..", "..", ".0"], ["0.", "0.", ".."], ["0.", "0.", ".."]]
+    expected = [["..", "..", ".0"], ["0.", "0.", ".."], [".0", ".0", "00"], ["0.", "0.", ".."]]
+    assert_equal expected, brailleconv.braille_converter
+  end
+
+  def test_numbers
+    message = "B20 20"
+    brailleconv = BrailleConverter.new(message)
+    expected = [["..", "..", ".0"], ["0.", "0.", ".."], [".0", ".0", "00"], ["0.", "0.", ".."],
+                [".0", "00", ".."], ["..", "..", ".."], [".0", ".0", "00"], ["0.", "0.", ".."],
+                [".0", "00", ".."]]
     assert_equal expected, brailleconv.braille_converter
   end
 

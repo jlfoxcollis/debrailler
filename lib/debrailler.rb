@@ -24,6 +24,7 @@ class Debrailler
     @line_two << compiler.slice!(0..length)
     @line_two.slice!(-1)
     @line_three << compiler.slice!(0..length)
+    @line_three.slice!(-1)
     [@line_one, @line_two, @line_three]
   end
 
@@ -59,9 +60,11 @@ class Debrailler
          caps << match
       elsif !caps.empty?
         caps.clear
-        keeps << reverse_keys[match].capitalize
-      else
-        keeps << reverse_keys[match]
+        keeps << reverse_num[match].capitalize
+      elsif match ==  [".0", ".0", "00"]
+        nums << match
+      elsif !nums.empty?
+        keeps << reverse_num[match]
       end
     end
     keeps.join

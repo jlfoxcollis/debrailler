@@ -10,17 +10,27 @@ class BrailleConverter
   end
 
   def doc_char
-    text_in.chars
+    text_in.flat_map do |line|
+      line.chomp.chars
+    end
   end
 
   def braille_converter
     compiled = []
+    num = []
     doc_char.each do |char|
       if char === char.capitalize && ("A".."Z").to_a.include?(char) then
         compiled << braille.txt[:caps]
         compiled << braille.txt[char.downcase]
-      elsif braille.num.include?(char)
-        compiled << braille.num[char.downcase]
+      elsif braille.num.include?(char) && num.empty?
+        compiled << braille.num["#"]
+        num << "#"
+        compiled << braille.num[char]
+      elsif braille.num.include?(char) && !num.empty?
+        compiled << braille.num[char]
+      elsif char == " "
+        num.clear
+        compiled << braille.txt[char.downcase]
       else
         compiled << braille.txt[char.downcase]
       end

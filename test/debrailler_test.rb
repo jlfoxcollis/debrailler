@@ -42,7 +42,12 @@ class DebraillerTest < MiniTest::Test
 
   def test_reverse_keys
 
-    assert_equal [["..", "..", ".."], " "], @debrailler.reverse_keys.first
+    assert_equal [["..", "..", ".."], " "], @debrailler.reverse_txt.first
+  end
+
+  def test_reverse_num
+
+    assert_equal [[".0", ".0", "00"], "#"], @debrailler.reverse_num.first
   end
 
   def test_reverting_to_letters
