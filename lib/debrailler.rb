@@ -48,7 +48,6 @@ class Debrailler
     @line_three << @compiled.slice!(0..79)
   end
 
-
   def braille_output
     one = @line_one
     two = @line_two
@@ -62,20 +61,6 @@ class Debrailler
     end
     @compiled_braille
   end
-
-  # def braille_output_over_80
-  #   one = @line_one
-  #   two = @line_two
-  #   three = @line_three
-  #   until one.length == 0
-  #     compiled_lines = []
-  #     compiled_lines << one.slice!(0..1)
-  #     compiled_lines << two.slice!(0..1)
-  #     compiled_lines << three.slice!(0..1)
-  #     @compiled_braille << compiled_lines
-  #   end
-  #   @compiled_braille
-  # end
 
   def reverse_txt
     @braille.txt.invert

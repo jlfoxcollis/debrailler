@@ -23,15 +23,18 @@ class BrailleConverter
         compiled << braille.txt[:caps]
         compiled << braille.txt[char.downcase]
       elsif braille.num.include?(char) && num.empty?
-        # require 'pry'; binding.pry
         compiled << braille.num["#"]
         num << "#"
         compiled << braille.num[char]
       elsif braille.num.include?(char) && !num.empty?
         compiled << braille.num[char]
+      elsif !braille.num.include?(char) && !num.empty?
+        num.clear
+        compiled << braille.txt[char]
+        compiled << braille.txt[" "]
       elsif char == " "
         num.clear
-        compiled << braille.txt[char.downcase]
+        compiled << braille.txt[char]
       else
         compiled << braille.txt[char.downcase]
       end
