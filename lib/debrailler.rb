@@ -3,9 +3,6 @@ require_relative './braille_data'
 class Debrailler
   attr_reader :braille_in,
               :compiled_braille,
-              :line_one,
-              :line_two,
-              :line_three,
               :braille
 
   def initialize(braille_in)
