@@ -1,7 +1,7 @@
 require_relative './braille_data'
 
 class Debrailler
-  attr_reader :braille_in, :compiled_braille, :line_one
+  attr_reader :braille_in, :compiled_braille, :line_one, :braille
 
   def initialize(braille_in)
     @braille = BrailleData.new
@@ -24,7 +24,6 @@ class Debrailler
     @line_two << compiler.slice!(0..length)
     @line_two.slice!(-1)
     @line_three << compiler.slice!(0..length)
-    @line_three.slice!(-1)
     [@line_one, @line_two, @line_three]
   end
 
@@ -41,5 +40,30 @@ class Debrailler
       @compiled_braille << compiled_lines
     end
     @compiled_braille
+  end
+
+  def reverse_txt
+    @braille.txt.invert
+  end
+
+  def reverse_num
+    @braille.num.invert
+  end
+
+  def to_char
+    keeps = []
+    caps = []
+    nums = []
+    @compiled_braille.each do |match|
+      if match == ["..", "..", ".0"]
+         caps << match
+      elsif !caps.empty?
+        caps.clear
+        keeps << reverse_keys[match].capitalize
+      else
+        keeps << reverse_keys[match]
+      end
+    end
+    keeps.join
   end
 end

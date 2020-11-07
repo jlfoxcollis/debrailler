@@ -19,6 +19,8 @@ class BrailleConverter
       if char === char.capitalize && ("A".."Z").to_a.include?(char) then
         compiled << braille.txt[:caps]
         compiled << braille.txt[char.downcase]
+      elsif braille.num.include?(char)
+        compiled << braille.num[char.downcase]
       else
         compiled << braille.txt[char.downcase]
       end

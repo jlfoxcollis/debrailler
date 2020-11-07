@@ -39,4 +39,16 @@ class DebraillerTest < MiniTest::Test
                 ["0.", ".0", ".."]]
     assert_equal expected, @debrailler.braille_output
   end
+
+  def test_reverse_keys
+
+    assert_equal [["..", "..", ".."], " "], @debrailler.reverse_keys.first
+  end
+
+  def test_reverting_to_letters
+    @debrailler.braille_reverter
+    @debrailler.braille_output
+    expected = "decode me"
+    assert_equal expected, @debrailler.to_char
+  end
 end
