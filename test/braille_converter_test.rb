@@ -16,7 +16,7 @@ class BrailleConverterTest < MiniTest::Test
 
   def test_doc_char
     expected = ["d", "e", "c", "o", "d", "e", " ", "m", "e"]
-    assert_equal expected, @brailleconv.doc_char
+    assert_equal expected, @brailleconv.compile
   end
 
   def test_braille_converter

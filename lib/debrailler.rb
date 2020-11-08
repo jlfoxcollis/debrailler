@@ -1,6 +1,8 @@
 require_relative './braille_data'
+require_relative './compiler_mod'
 
 class Debrailler
+  include Compiler
   attr_reader :braille_in,
               :compiled_braille,
               :braille
@@ -13,13 +15,7 @@ class Debrailler
     @line_two = ""
     @line_three = ""
     @compiled_braille = []
-    @compiled = compiler
-  end
-
-  def compiler
-    braille_in.flat_map do |line|
-     line.chomp
-    end.join
+    @compiled = compiler(braille_in).join
   end
 
   def more_or_less
@@ -67,7 +63,7 @@ class Debrailler
     @braille.num.invert
   end
 
-  def to_char
+  def file_output
     keeps = []
     caps = []
     nums = []

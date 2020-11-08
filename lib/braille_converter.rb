@@ -1,24 +1,21 @@
 require_relative './braille_data'
+require_relative './compiler_mod'
 
 class BrailleConverter
-  attr_reader :text_in, :text_out, :braille
+  include Compiler
+  attr_reader :text_in, :text_out, :braille, :compile
 
   def initialize(text_in)
     @braille = BrailleData.new
     @text_in = text_in
     @text_out = []
-  end
-
-  def doc_char
-    text_in.flat_map do |line|
-      line.chomp.chars
-    end
+    @compile = compiler(text_in)
   end
 
   def braille_converter
     compiled = []
     num = []
-    doc_char.each do |char|
+    @compile.each do |char|
       if char === char.capitalize && ("A".."Z").to_a.include?(char) then
         compiled << braille.txt[:caps]
         compiled << braille.txt[char.downcase]
@@ -60,7 +57,7 @@ class BrailleConverter
     end
   end
 
-  def braille_output
+  def file_output
     text_one = line_one
     text_two = line_two
     text_three = line_three

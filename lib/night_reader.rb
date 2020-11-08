@@ -1,11 +1,35 @@
-require './lib/debrailler'
+require_relative './debrailler'
+require_relative './file_reader'
 
-file_in = ARGV[0]
-file_out = ARGV[1]
-reverter = Debrailler.new(File.readlines(file_in))
-reverter.compiler
-reverter.more_or_less
-reverter.braille_output
-File.open(file_out, 'w') {|output| output.write(reverter.to_char)}
+class NightReader
+  attr_reader :reader, :reverter
 
-puts "Created #{file_out} containing #{reverter.to_char.length} characters."
+  def initialize
+    @reader = FileReadWrite.new
+  end
+
+  def read_braille
+    braille = @reader.read
+    plain = decode_to_text(braille)
+  end
+
+  def decode_to_text(braille)
+    @reverter = Debrailler.new(braille)
+    reverter.more_or_less
+    reverter.braille_output
+    output = create_text_file(reverter)
+  end
+
+  def create_text_file(reverter)
+    new_plain = @reader.write(reverter)
+    output_message
+  end
+
+  def output_message
+    puts "Created #{ARGV[1]} containing #{reverter.file_output.length} characters."
+  end
+end
+
+
+debrailler = NightReader.new
+debrailler.read_braille
