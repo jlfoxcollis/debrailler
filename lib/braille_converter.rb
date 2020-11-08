@@ -9,7 +9,6 @@ class BrailleConverter
   def initialize(text_in)
     @braille = BrailleData.new
     @text_in = text_in
-    @text_out = []
     @compile = compiler(text_in)
   end
 
@@ -42,5 +41,6 @@ class BrailleConverter
 
   def file_creation
     file = BrailleOutput.new(braille_converter)
+    file.file_output
   end
 end

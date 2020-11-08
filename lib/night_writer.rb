@@ -6,6 +6,7 @@ class NightWriter
 
   def initialize
     @reader = FileReadWrite.new
+    @converter = converter
   end
 
   def encode_file_to_braille
@@ -16,11 +17,12 @@ class NightWriter
   def encode_to_braille(plain)
     @converter = BrailleConverter.new(plain)
     converter.braille_converter
-    output = create_braille_file(converter)
+    output = converter.file_creation
+    create_braille_file(output)
   end
 
-  def create_braille_file(converter)
-    output = @reader.write(converter)
+  def create_braille_file(output)
+    @reader.write(output)
     output_message
   end
 

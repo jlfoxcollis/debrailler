@@ -1,8 +1,9 @@
 class BrailleOutput
-  attr_reader :data
+  attr_reader :data, :data_out
 
   def initialize(data)
     @data = data
+    @data_out = []
   end
 
   def line_one
@@ -28,10 +29,10 @@ class BrailleOutput
     text_two = line_two
     text_three = line_three
     until text_one.length == 0
-      @text_out << text_one.slice!(0..79) + "\n"
-      @text_out << text_two.slice!(0..79) + "\n"
-      @text_out << text_three.slice!(0..79) + "\n"
+      @data_out << text_one.slice!(0..79) + "\n"
+      @data_out << text_two.slice!(0..79) + "\n"
+      @data_out << text_three.slice!(0..79) + "\n"
     end
-    @text_out.join
+    @data_out.join
   end
 end
