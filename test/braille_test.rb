@@ -1,5 +1,5 @@
 require './test/test_helper'
-require './lib/braille_data'
+require './lib/library'
 
 class Braille < MiniTest::Test
 

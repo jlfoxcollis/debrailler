@@ -24,19 +24,15 @@ class BrailleConverter
       if char === char.capitalize && ("A".."Z").to_a.include?(char) then
         compiled << braille.txt(:caps)
         compiled << braille.txt(char.downcase)
-      elsif braille.num(char).include?(char) && number.empty?
+      elsif char == " " && !number.empty?
+        number.clear
+        compiled << braille.txt(char)
+      elsif braille.valid_num?(char) && number.empty?
         compiled << braille.num("#")
         number << "#"
         compiled << braille.num(char)
-      elsif braille.num(char).include?(char) && !number.empty?
+      elsif braille.valid_num?(char) && !number.empty?
         compiled << braille.num(char)
-      elsif !braille.num(char).include?(char) && !number.empty?
-        number.clear
-        compiled << braille.txt(char)
-        compiled << braille.txt(" ")
-      elsif char == " "
-        number.clear
-        compiled << braille.txt(char)
       else
         compiled << braille.txt(char)
       end

@@ -11,11 +11,14 @@ class BrailleConverterTest < MiniTest::Test
   def test_it_exists
 
     assert_equal ["decode me"], @brailleconv.text_in
-    assert_equal [], @brailleconv.text_out
+    assert_instance_of BrailleConverter, @brailleconv
+    assert_equal Array, @brailleconv.text_in.class
+    assert_equal Library, @brailleconv.braille.class
   end
 
   def test_doc_char
     expected = ["d", "e", "c", "o", "d", "e", " ", "m", "e"]
+
     assert_equal expected, @brailleconv.compile
   end
 
@@ -25,22 +28,8 @@ class BrailleConverterTest < MiniTest::Test
                 ["00", ".0", ".."], ["0.", ".0", ".."],
                 ["..", "..", ".."], ["00", "..", "0."],
                 ["0.", ".0", ".."]]
+
     assert_equal expected, @brailleconv.braille_converter
-  end
-
-  def test_line_one
-    expected = "000.000.000...000."
-    assert_equal expected, @brailleconv.line_one
-  end
-
-  def test_line_two
-    expected = ".0.0...0.0.0.....0"
-    assert_equal expected, @brailleconv.line_two
-  end
-
-  def test_line_three
-    expected = "......0.......0..."
-    assert_equal expected, @brailleconv.line_three
   end
 
   def test_caps
@@ -56,17 +45,17 @@ class BrailleConverterTest < MiniTest::Test
     brailleconv = BrailleConverter.new(message)
     expected = [["..", "..", ".0"], ["0.", "0.", ".."], [".0", ".0", "00"],
                 ["0.", "0.", ".."], [".0", "00", ".."], ["..", "..", ".."],
-                ["..", "..", ".."], [".0", ".0", "00"], ["0.", "0.", ".."],
-                [".0", "00", ".."]]
+                [".0", ".0", "00"], ["0.", "0.", ".."], [".0", "00", ".."]]
 
     assert_equal expected, brailleconv.braille_converter
   end
 
-  def test_braille_output
+  def test_file_creation
     expected = "000.000.000...000.
 .0.0...0.0.0.....0
 ......0.......0...
 "
-    assert_equal expected, @brailleconv.braille_output
+
+    assert_equal expected, @brailleconv.file_creation
   end
 end

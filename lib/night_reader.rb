@@ -27,7 +27,7 @@ class NightReader
   end
 
   def output_message
-    puts "Created #{ARGV[1]} containing #{reverter.file_creation.length} characters."
+    puts "Created #{ARGV[1]} containing #{reverter.compiled_braille.length} characters."
   end
 end
 

@@ -51,8 +51,6 @@ class Debrailler
   end
 
   def braille_output
-    require 'pry';binding.pry
-
     one = @line_one
     two = @line_two
     three = @line_three

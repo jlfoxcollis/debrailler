@@ -30,6 +30,8 @@ class Library
         return text.braille
       elsif text.braille == character
         return text.char.to_s
+      else
+        false
       end
     end
   end
@@ -40,7 +42,21 @@ class Library
         return number.braille
       elsif number.braille == character
         return number.char.to_s
+      else
+        false
       end
+    end
+  end
+
+  def valid_text?(character)
+    @letters.any? do |letter|
+      letter.char == character || letter.braille == character
+    end
+  end
+
+  def valid_num?(character)
+    @numbers.any? do |number|
+      number.char == character || number.braille == character
     end
   end
 
