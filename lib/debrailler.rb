@@ -1,4 +1,3 @@
-require_relative './braille_data'
 require_relative './compiler_mod'
 require_relative './text_output'
 

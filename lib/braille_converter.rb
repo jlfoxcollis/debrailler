@@ -1,4 +1,4 @@
-require_relative './braille_data'
+require_relative './library'
 require_relative './compiler_mod'
 require_relative './braille_output'
 
@@ -7,33 +7,33 @@ class BrailleConverter
   attr_reader :text_in, :text_out, :braille, :compile
 
   def initialize(text_in)
-    @braille = BrailleData.new
+    @braille = Library.new
     @text_in = text_in
     @compile = compiler(text_in)
   end
 
   def braille_converter
     compiled = []
-    num = []
+    number = []
     @compile.each do |char|
       if char === char.capitalize && ("A".."Z").to_a.include?(char) then
-        compiled << braille.txt[:caps]
-        compiled << braille.txt[char.downcase]
-      elsif braille.num.include?(char) && num.empty?
-        compiled << braille.num["#"]
-        num << "#"
-        compiled << braille.num[char]
-      elsif braille.num.include?(char) && !num.empty?
-        compiled << braille.num[char]
-      elsif !braille.num.include?(char) && !num.empty?
-        num.clear
-        compiled << braille.txt[char]
-        compiled << braille.txt[" "]
+        compiled << braille.txt(:caps)
+        compiled << braille.txt(char.downcase)
+      elsif braille.num(char).include?(char) && number.empty?
+        compiled << braille.num("#")
+        number << "#"
+        compiled << braille.num(char)
+      elsif braille.num(char).include?(char) && !number.empty?
+        compiled << braille.num(char)
+      elsif !braille.num(char).include?(char) && !number.empty?
+        number.clear
+        compiled << braille.txt(char)
+        compiled << braille.txt(" ")
       elsif char == " "
-        num.clear
-        compiled << braille.txt[char]
+        number.clear
+        compiled << braille.txt(char)
       else
-        compiled << braille.txt[char.downcase]
+        compiled << braille.txt(char)
       end
     end
     compiled

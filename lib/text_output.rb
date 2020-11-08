@@ -1,8 +1,10 @@
+require_relative './library'
+
 class TextOutput
   attr_reader :data
 
   def initialize(data)
-    @braille = BrailleData.new
+    @braille = Library.new
     @data = data
   end
 
