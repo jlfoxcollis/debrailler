@@ -17,17 +17,17 @@ class NightReader
     @reverter = Debrailler.new(braille)
     reverter.more_or_less
     reverter.braille_output
-    require 'pry'; binding.pry
-    output = create_text_file(reverter)
+    output = reverter.file_creation
+    create_text_file(output)
   end
 
-  def create_text_file(reverter)
-    new_plain = @reader.write(reverter)
+  def create_text_file(output)
+    new_plain = @reader.write(output)
     output_message
   end
 
   def output_message
-    puts "Created #{ARGV[1]} containing #{reverter.braille_output.length} characters."
+    puts "Created #{ARGV[1]} containing #{reverter.file_creation.length} characters."
   end
 end
 

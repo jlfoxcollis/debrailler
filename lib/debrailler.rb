@@ -4,12 +4,9 @@ require_relative './text_output'
 
 class Debrailler
   include Compiler
-  attr_reader :braille_in,
-              :compiled_braille
+  attr_reader :compiled_braille
 
   def initialize(braille_in)
-    @braille_in = braille_in
-    @text_out = []
     @line_one = ""
     @line_two = ""
     @line_three = ""
@@ -56,5 +53,6 @@ class Debrailler
 
   def file_creation
     file = TextOutput.new(compiled_braille)
+    file.file_output
   end
 end

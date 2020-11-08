@@ -1,2 +1,6 @@
-Biden wins Pennsylvannia. 2020!
-Looking forward to the next 4 years!
+Unlike previous projects where we may have provided an interaction
+pattern representing what you might see in Pry, this tool will
+be used from the command line. The general pattern is that we
+will run the program, providing an existing file for input,
+and the name of a nonexistent file for output, and the program
+will provide us with a confirmation.

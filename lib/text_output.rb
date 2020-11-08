@@ -6,24 +6,16 @@ class TextOutput
     @data = data
   end
 
-  def reverse_txt
-    @braille.txt.invert
-  end
-
-  def reverse_num
-    @braille.num.invert
-  end
-
   def file_output
     keeps = []
     caps = []
     nums = []
-    @compiled_braille.each do |match|
+    @data.each do |match|
       if match == ["..", "..", ".0"]
          caps << match
       elsif !caps.empty?
         caps.clear
-        keeps << reverse_txt[match].upcase
+        keeps << @braille.txt.key(match).upcase
       elsif match ==  [".0", ".0", "00"]
         nums << match
       elsif !nums.empty? && match == ["..", "..", ".."]
