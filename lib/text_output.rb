@@ -6,6 +6,7 @@ class TextOutput
   def initialize(data)
     @braille = Library.new
     @data = data
+    @data_out = []
   end
 
   def file_output
@@ -17,7 +18,8 @@ class TextOutput
          caps << match
       elsif !caps.empty?
         caps.clear
-        keeps << @braille.txt(match).upcase
+        a = @braille.txt(match)
+        keeps << a.upcase
       elsif match ==  [".0", ".0", "00"]
         nums << match
       elsif !nums.empty? && match == ["..", "..", ".."]
@@ -29,6 +31,14 @@ class TextOutput
         keeps << @braille.txt(match)
       end
     end
-    keeps.join
+    ongoing = keeps.join
+    wrap_it = word_wrap(ongoing)
+  end
+
+  def word_wrap(ongoing)
+    until ongoing.length == 0
+      @data_out << ongoing.slice!(0..79) + "\n"
+    end
+    @data_out.join
   end
 end

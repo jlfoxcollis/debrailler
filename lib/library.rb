@@ -1,9 +1,11 @@
 require_relative './char_braille'
+require_relative './file_reader'
 
 class Library
-  attr_reader :letters, :numbers
+  attr_reader :letters, :numbers, :reader
 
   def initialize
+    @reader = FileReadWrite.new
     @letters = []
     @numbers = []
     create_text
@@ -27,7 +29,7 @@ class Library
       if text.char == character
         return text.braille
       elsif text.braille == character
-        return text.char
+        return text.char.to_s
       end
     end
   end
@@ -37,7 +39,7 @@ class Library
       if number.char == character
         return number.braille
       elsif number.braille == character
-        return number.char
+        return number.char.to_s
       end
     end
   end

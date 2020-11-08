@@ -16,6 +16,11 @@ class BrailleConverter
     compiled = []
     number = []
     @compile.each do |char|
+      if char == "\n"
+        char.replace(" ")
+      end
+    end
+    @compile.each do |char|
       if char === char.capitalize && ("A".."Z").to_a.include?(char) then
         compiled << braille.txt(:caps)
         compiled << braille.txt(char.downcase)

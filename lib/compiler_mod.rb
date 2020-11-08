@@ -2,7 +2,7 @@ module Compiler
 
   def compiler(text_in)
     text_in.flat_map do |line|
-      line.chomp.chars
+      line.chars
     end
   end
 end

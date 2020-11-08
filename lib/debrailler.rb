@@ -3,7 +3,11 @@ require_relative './text_output'
 
 class Debrailler
   include Compiler
-  attr_reader :compiled_braille
+  attr_reader :compiled_braille,
+              :line_one,
+              :line_two,
+              :line_three,
+              :compiled
 
   def initialize(braille_in)
     @line_one = ""
@@ -14,10 +18,11 @@ class Debrailler
   end
 
   def more_or_less
+    @compiled.gsub("\n", "..")
     until @compiled.length == 0
-      if @compiled.length >= 240
+      if @compiled.length >= 243
         braille_reverter_over_80
-      elsif @compiled.length < 240
+      elsif @compiled.length < 243
         braille_reverter
       end
     end
@@ -28,15 +33,26 @@ class Debrailler
     @line_one << @compiled.slice!(0..lngth)
     @line_two << @compiled.slice!(0..lngth)
     @line_three << @compiled.slice!(0..lngth)
+    @line_one.slice!(-1)
+    @line_two.slice!(-1)
+    @line_three.slice!(-1)
   end
 
   def braille_reverter_over_80
-    @line_one << @compiled.slice!(0..79)
-    @line_two << @compiled.slice!(0..79)
-    @line_three << @compiled.slice!(0..79)
+    @line_one << @compiled.slice!(0..80)
+    @line_two << @compiled.slice!(0..80)
+    @line_three << @compiled.slice!(0..80)
+    @line_one.slice!(-1)
+    @line_two.slice!(-1)
+    @line_three.slice!(-1)
+    # @line_one.gsub!("\n", "..")
+    # @line_two.gsub!("\n", "..")
+    # @line_three.gsub!("\n", "..")
   end
 
   def braille_output
+    require 'pry';binding.pry
+
     one = @line_one
     two = @line_two
     three = @line_three

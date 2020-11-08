@@ -5,5 +5,4 @@ class CharBraille
     @char = char
     @braille = braille
   end
-
 end
