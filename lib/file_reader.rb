@@ -7,6 +7,6 @@ class FileReadWrite
 
   def write(verter)
     file_out = ARGV[1]
-    File.open(file_out, 'w') {|output| output.write(verter.file_output)}
+    File.open(file_out, 'w') {|output| output.write(verter.file_creation)}
   end
 end
