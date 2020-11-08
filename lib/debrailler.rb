@@ -33,9 +33,9 @@ class Debrailler
     @line_one << @compiled.slice!(0..lngth)
     @line_two << @compiled.slice!(0..lngth)
     @line_three << @compiled.slice!(0..lngth)
-    @line_one.slice!(-1)
-    @line_two.slice!(-1)
-    @line_three.slice!(-1)
+    # @line_one.slice!(-1)
+    # @line_two.slice!(-1)
+    # @line_three.slice!(-1)
   end
 
   def braille_reverter_over_80
@@ -66,6 +66,6 @@ class Debrailler
 
   def file_creation
     file = TextOutput.new(compiled_braille)
-    file.file_output
+    file.file_output.strip
   end
 end

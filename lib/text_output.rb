@@ -1,7 +1,7 @@
 require_relative './library'
 
 class TextOutput
-  attr_reader :data
+  attr_reader :data, :braille
 
   def initialize(data)
     @braille = Library.new
@@ -32,13 +32,13 @@ class TextOutput
       end
     end
     ongoing = keeps.join
-    wrap_it = word_wrap(ongoing)
+    word_wrap(ongoing)
   end
 
   def word_wrap(ongoing)
     until ongoing.length == 0
       @data_out << ongoing.slice!(0..79) + "\n"
     end
-    @data_out.join
+    @data_out.join.chomp
   end
 end
