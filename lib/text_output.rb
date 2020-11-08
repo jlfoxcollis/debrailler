@@ -17,16 +17,16 @@ class TextOutput
          caps << match
       elsif !caps.empty?
         caps.clear
-        keeps << @braille.txt.key(match).upcase
+        keeps << @braille.txt(match).upcase
       elsif match ==  [".0", ".0", "00"]
         nums << match
       elsif !nums.empty? && match == ["..", "..", ".."]
         nums.clear
-        keeps << @braille.txt.key(match)
+        keeps << @braille.txt(match)
       elsif !nums.empty?
-        keeps << @braille.num.key(match)
+        keeps << @braille.num(match)
       else
-        keeps << @braille.txt.key(match)
+        keeps << @braille.txt(match)
       end
     end
     keeps.join
