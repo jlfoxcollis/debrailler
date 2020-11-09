@@ -13,6 +13,6 @@ class FileReadWrite
   end
 
   def from_csv(location)
-    csv = CSV.read(location, headers: true)
+    CSV.read(location, headers: true)
   end
 end

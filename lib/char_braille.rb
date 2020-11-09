@@ -2,8 +2,7 @@ class CharBraille
   attr_reader :char,
               :line_one,
               :line_two,
-              :line_three,
-              :braille
+              :line_three
 
   def initialize(info)
     @char = info["char"]
