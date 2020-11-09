@@ -9,7 +9,7 @@ class NightWriter
     @converter = converter
   end
 
-  def encode_file_to_braille
+  def read_file
     plain = @reader.read
     braille = encode_to_braille(plain)
   end
@@ -32,4 +32,4 @@ class NightWriter
 end
 
 night_writer = NightWriter.new
-night_writer.encode_file_to_braille
+night_writer.read_file

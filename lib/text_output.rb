@@ -13,22 +13,24 @@ class TextOutput
     keeps = []
     caps = []
     nums = []
-    @data.each do |match|
+    data.each do |match|
       if match == ["..", "..", ".0"]
          caps << match
       elsif !caps.empty?
         caps.clear
-        a = @braille.txt(match)
+        a = braille.txt(match)
         keeps << a.upcase
       elsif match ==  [".0", ".0", "00"]
         nums << match
       elsif !nums.empty? && match == ["..", "..", ".."]
         nums.clear
-        keeps << @braille.txt(match)
+        keeps << braille.txt(match)
+      elsif !nums.empty? && !braille.valid_num?(match)
+        keeps << braille.txt(match)
       elsif !nums.empty?
-        keeps << @braille.num(match)
+        keeps << braille.num(match)
       else
-        keeps << @braille.txt(match)
+        keeps << braille.txt(match)
       end
     end
     ongoing = keeps.join

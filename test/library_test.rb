@@ -20,7 +20,7 @@ class Braille < MiniTest::Test
 
   def test_numbers
 
-    assert_equal 12, @braille.numbers.count
+    assert_equal 11, @braille.numbers.count
     assert_equal CharBraille, @braille.numbers.first.class
   end
 
@@ -48,7 +48,6 @@ class Braille < MiniTest::Test
     assert_equal ["0.", "00", ".."], @braille.num("8")
     assert_equal [".0", "0.", ".."], @braille.num("9")
     assert_equal [".0", ".0", "00"], @braille.num("#")
-    assert_equal ["..", "00", "0."], @braille.num("!")
   end
 
   def test_characters
