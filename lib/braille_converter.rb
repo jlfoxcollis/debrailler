@@ -12,17 +12,22 @@ class BrailleConverter
     @compile = compiler(text_in)
   end
 
-  def braille_converter
-    compiled = []
-    number = []
+  def clean_up_line_breaks
     @compile.each do |char|
       if char == "\n"
         char.replace(" ")
       end
     end
+  end
+
+
+  def braille_converter
+    clean_up_line_breaks
+    compiled = []
+    number = []
     @compile.each do |char|
       if char === char.capitalize && ("A".."Z").to_a.include?(char) then
-        compiled << braille.txt(:caps)
+        compiled << braille.txt("caps")
         compiled << braille.txt(char.downcase)
       elsif char == " " && !number.empty?
         number.clear
