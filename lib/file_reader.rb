@@ -1,3 +1,5 @@
+require 'csv'
+
 class FileReadWrite
 
   def read
@@ -8,5 +10,9 @@ class FileReadWrite
   def write(verter)
     file_out = ARGV[1]
     File.open(file_out, 'w') {|output| output.write(verter)}
+  end
+
+  def from_csv(location)
+    csv = CSV.read(location, headers: true)
   end
 end

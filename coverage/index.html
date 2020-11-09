@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2020-11-09T12:39:26-07:00">2020-11-09T12:39:26-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2020-11-09T12:44:06-07:00">2020-11-09T12:44:06-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  93.6%
+  93.68%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         30.06
+         29.94
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>344</b> relevant lines,
-    <span class="green"><b>322</b> lines covered</span> and
+    <b>348</b> relevant lines,
+    <span class="green"><b>326</b> lines covered</span> and
     <span class="red"><b>22</b> lines missed. </span>
     (<span class="green">
-  93.6%
+  93.68%
 </span>
 )
   </div>
@@ -127,23 +127,23 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#243159e1ec6471635c9a2db46a994b1013441f66" class="src_link" title="lib/file_reader.rb">lib/file_reader.rb</a></td>
-            <td class="red strong cell--number t-file__coverage">42.86 %</td>
-            <td class="cell--number">12</td>
-            <td class="cell--number">7</td>
-            <td class="cell--number">3</td>
+            <td class="red strong cell--number t-file__coverage">60.00 %</td>
+            <td class="cell--number">18</td>
+            <td class="cell--number">10</td>
+            <td class="cell--number">6</td>
             <td class="cell--number">4</td>
-            <td class="cell--number">0.43</td>
+            <td class="cell--number">4.30</td>
             
           </tr>
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#5e0a80920296e133104f741fa3489096dfa156a0" class="src_link" title="lib/library.rb">lib/library.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">97.37 %</td>
-            <td class="cell--number">132</td>
+            <td class="green strong cell--number t-file__coverage">97.44 %</td>
+            <td class="cell--number">65</td>
+            <td class="cell--number">39</td>
             <td class="cell--number">38</td>
-            <td class="cell--number">37</td>
             <td class="cell--number">1</td>
-            <td class="cell--number">119.74</td>
+            <td class="cell--number">117.62</td>
             
           </tr>
         
@@ -2392,7 +2392,7 @@
     <h3>lib/file_reader.rb</h3>
     <h4>
       <span class="red">
-  42.86%
+  60.0%
 </span>
 
       lines covered
@@ -2401,8 +2401,8 @@
     
 
     <div class="t-line-summary">
-      <b>7</b> relevant lines.
-      <span class="green"><b>3</b> lines covered</span> and
+      <b>10</b> relevant lines.
+      <span class="green"><b>6</b> lines covered</span> and
       <span class="red"><b>4</b> lines missed.</span>
     </div>
 
@@ -2420,7 +2420,7 @@
 
             
 
-            <code class="ruby">class FileReadWrite</code>
+            <code class="ruby">require &#39;csv&#39;</code>
           </li>
         </div>
       
@@ -2442,45 +2442,12 @@
 
             
 
-            <code class="ruby">  def read</code>
+            <code class="ruby">class FileReadWrite</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="4">
-            
-            
-
-            
-
-            <code class="ruby">    file_in = ARGV[0]</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="5">
-            
-            
-
-            
-
-            <code class="ruby">    File.readlines(file_in)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="6">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="7">
+          <li class="never" data-hits="" data-linenumber="4">
             
             
 
@@ -2491,40 +2458,40 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="8">
+          <li class="covered" data-hits="1" data-linenumber="5">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  def write(verter)</code>
+            <code class="ruby">  def read</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="9">
+          <li class="missed" data-hits="0" data-linenumber="6">
             
             
 
             
 
-            <code class="ruby">    file_out = ARGV[1]</code>
+            <code class="ruby">    file_in = ARGV[0]</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="10">
+          <li class="missed" data-hits="0" data-linenumber="7">
             
             
 
             
 
-            <code class="ruby">    File.open(file_out, &#39;w&#39;) {|output| output.write(verter)}</code>
+            <code class="ruby">    File.readlines(file_in)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="11">
+          <li class="never" data-hits="" data-linenumber="8">
             
             
 
@@ -2535,7 +2502,106 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="12">
+          <li class="never" data-hits="" data-linenumber="9">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="10">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def write(verter)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="11">
+            
+            
+
+            
+
+            <code class="ruby">    file_out = ARGV[1]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="12">
+            
+            
+
+            
+
+            <code class="ruby">    File.open(file_out, &#39;w&#39;) {|output| output.write(verter)}</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="13">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="14">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="15">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def from_csv(location)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="38" data-linenumber="16">
+            <span class="hits">38</span>
+            
+
+            
+
+            <code class="ruby">    csv = CSV.read(location, headers: true)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="17">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="18">
             
             
 
@@ -2555,7 +2621,7 @@
     <h3>lib/library.rb</h3>
     <h4>
       <span class="green">
-  97.37%
+  97.44%
 </span>
 
       lines covered
@@ -2564,8 +2630,8 @@
     
 
     <div class="t-line-summary">
-      <b>38</b> relevant lines.
-      <span class="green"><b>37</b> lines covered</span> and
+      <b>39</b> relevant lines.
+      <span class="green"><b>38</b> lines covered</span> and
       <span class="red"><b>1</b> lines missed.</span>
     </div>
 
@@ -2599,18 +2665,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="3">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">require &#39;csv&#39;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="4">
+          <li class="never" data-hits="" data-linenumber="3">
             
             
 
@@ -2621,7 +2676,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="5">
+          <li class="covered" data-hits="1" data-linenumber="4">
             <span class="hits">1</span>
             
 
@@ -2632,7 +2687,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="6">
+          <li class="covered" data-hits="1" data-linenumber="5">
             <span class="hits">1</span>
             
 
@@ -2643,7 +2698,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="7">
+          <li class="never" data-hits="" data-linenumber="6">
             
             
 
@@ -2654,7 +2709,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="8">
+          <li class="covered" data-hits="1" data-linenumber="7">
             <span class="hits">1</span>
             
 
@@ -2665,7 +2720,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="19" data-linenumber="9">
+          <li class="covered" data-hits="19" data-linenumber="8">
             <span class="hits">19</span>
             
 
@@ -2676,7 +2731,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="19" data-linenumber="10">
+          <li class="covered" data-hits="19" data-linenumber="9">
             <span class="hits">19</span>
             
 
@@ -2687,7 +2742,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="19" data-linenumber="11">
+          <li class="covered" data-hits="19" data-linenumber="10">
             <span class="hits">19</span>
             
 
@@ -2698,7 +2753,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="19" data-linenumber="12">
+          <li class="covered" data-hits="19" data-linenumber="11">
             <span class="hits">19</span>
             
 
@@ -2709,7 +2764,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="19" data-linenumber="13">
+          <li class="covered" data-hits="19" data-linenumber="12">
             <span class="hits">19</span>
             
 
@@ -2720,7 +2775,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="14">
+          <li class="never" data-hits="" data-linenumber="13">
             
             
 
@@ -2731,7 +2786,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="15">
+          <li class="never" data-hits="" data-linenumber="14">
             
             
 
@@ -2742,7 +2797,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="16">
+          <li class="covered" data-hits="1" data-linenumber="15">
             <span class="hits">1</span>
             
 
@@ -2753,13 +2808,24 @@
         </div>
       
         <div>
+          <li class="covered" data-hits="19" data-linenumber="16">
+            <span class="hits">19</span>
+            
+
+            
+
+            <code class="ruby">    read = @reader.from_csv(&#39;./data/char.csv&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
           <li class="covered" data-hits="19" data-linenumber="17">
             <span class="hits">19</span>
             
 
             
 
-            <code class="ruby">    CSV.foreach(&#39;./data/char.csv&#39;, headers: true) do |row|</code>
+            <code class="ruby">    read.each do |row|</code>
           </li>
         </div>
       
@@ -2819,73 +2885,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="23">
-            
-            
-
-            
-
-            <code class="ruby">  # def create_text</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="24">
-            
-            
-
-            
-
-            <code class="ruby">  #   text.each do |char, braille|</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="25">
-            
-            
-
-            
-
-            <code class="ruby">  #     @letters &lt;&lt; CharBraille.new(char, braille)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="26">
-            
-            
-
-            
-
-            <code class="ruby">  #   end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="27">
-            
-            
-
-            
-
-            <code class="ruby">  # end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="28">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="29">
+          <li class="covered" data-hits="1" data-linenumber="23">
             <span class="hits">1</span>
             
 
@@ -2896,18 +2896,29 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="19" data-linenumber="30">
+          <li class="covered" data-hits="19" data-linenumber="24">
             <span class="hits">19</span>
             
 
             
 
-            <code class="ruby">    CSV.foreach(&#39;./data/number.csv&#39;, headers: true) do |row|</code>
+            <code class="ruby">    read = @reader.from_csv(&#39;./data/number.csv&#39;)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="209" data-linenumber="31">
+          <li class="covered" data-hits="19" data-linenumber="25">
+            <span class="hits">19</span>
+            
+
+            
+
+            <code class="ruby">    read.each do |row|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="209" data-linenumber="26">
             <span class="hits">209</span>
             
 
@@ -2918,7 +2929,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="32">
+          <li class="never" data-hits="" data-linenumber="27">
             
             
 
@@ -2929,7 +2940,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="33">
+          <li class="never" data-hits="" data-linenumber="28">
             
             
 
@@ -2940,7 +2951,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="34">
+          <li class="never" data-hits="" data-linenumber="29">
             
             
 
@@ -2951,73 +2962,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="35">
-            
-            
-
-            
-
-            <code class="ruby">  # def create_numbers</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="36">
-            
-            
-
-            
-
-            <code class="ruby">  #   number.each do |num, braille|</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="37">
-            
-            
-
-            
-
-            <code class="ruby">  #     @numbers &lt;&lt; CharBraille.new(num, braille)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="38">
-            
-            
-
-            
-
-            <code class="ruby">  #   end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="39">
-            
-            
-
-            
-
-            <code class="ruby">  # end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="40">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="41">
+          <li class="covered" data-hits="1" data-linenumber="30">
             <span class="hits">1</span>
             
 
@@ -3028,18 +2973,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="42">
-            
-            
-
-            
-
-            <code class="ruby">    # require &#39;pry&#39;; binding.pry</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="75" data-linenumber="43">
+          <li class="covered" data-hits="75" data-linenumber="31">
             <span class="hits">75</span>
             
 
@@ -3050,7 +2984,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="920" data-linenumber="44">
+          <li class="covered" data-hits="920" data-linenumber="32">
             <span class="hits">920</span>
             
 
@@ -3061,7 +2995,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="57" data-linenumber="45">
+          <li class="covered" data-hits="57" data-linenumber="33">
             <span class="hits">57</span>
             
 
@@ -3072,7 +3006,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="863" data-linenumber="46">
+          <li class="covered" data-hits="863" data-linenumber="34">
             <span class="hits">863</span>
             
 
@@ -3083,13 +3017,145 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="18" data-linenumber="47">
+          <li class="covered" data-hits="18" data-linenumber="35">
             <span class="hits">18</span>
             
 
             
 
             <code class="ruby">        return text.char.to_s</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="36">
+            
+            
+
+            
+
+            <code class="ruby">      else</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="845" data-linenumber="37">
+            <span class="hits">845</span>
+            
+
+            
+
+            <code class="ruby">        false</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="38">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="39">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="40">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="41">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="42">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def num(character)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="19" data-linenumber="43">
+            <span class="hits">19</span>
+            
+
+            
+
+            <code class="ruby">    @numbers.select do |number|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="85" data-linenumber="44">
+            <span class="hits">85</span>
+            
+
+            
+
+            <code class="ruby">      if number.char == character</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="19" data-linenumber="45">
+            <span class="hits">19</span>
+            
+
+            
+
+            <code class="ruby">        return number.braille</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="66" data-linenumber="46">
+            <span class="hits">66</span>
+            
+
+            
+
+            <code class="ruby">      elsif number.braille == character</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="47">
+            
+            
+
+            
+
+            <code class="ruby">        return number.char.to_s</code>
           </li>
         </div>
       
@@ -3105,8 +3171,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="845" data-linenumber="49">
-            <span class="hits">845</span>
+          <li class="covered" data-hits="66" data-linenumber="49">
+            <span class="hits">66</span>
             
 
             
@@ -3166,95 +3232,95 @@
 
             
 
-            <code class="ruby">  def num(character)</code>
+            <code class="ruby">  def valid_text?(character)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="19" data-linenumber="55">
-            <span class="hits">19</span>
+          <li class="covered" data-hits="2" data-linenumber="55">
+            <span class="hits">2</span>
             
 
             
 
-            <code class="ruby">    @numbers.select do |number|</code>
+            <code class="ruby">    @letters.any? do |letter|</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="85" data-linenumber="56">
-            <span class="hits">85</span>
+          <li class="covered" data-hits="36" data-linenumber="56">
+            <span class="hits">36</span>
             
 
             
 
-            <code class="ruby">      if number.char == character</code>
+            <code class="ruby">      letter.char == character || letter.braille == character</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="19" data-linenumber="57">
-            <span class="hits">19</span>
+          <li class="never" data-hits="" data-linenumber="57">
+            
             
 
             
 
-            <code class="ruby">        return number.braille</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="66" data-linenumber="58">
-            <span class="hits">66</span>
+          <li class="never" data-hits="" data-linenumber="58">
+            
             
 
             
 
-            <code class="ruby">      elsif number.braille == character</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="59">
+          <li class="never" data-hits="" data-linenumber="59">
             
             
 
             
 
-            <code class="ruby">        return number.char.to_s</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="60">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="60">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">      else</code>
+            
+
+            <code class="ruby">  def valid_num?(character)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="66" data-linenumber="61">
-            <span class="hits">66</span>
+          <li class="covered" data-hits="45" data-linenumber="61">
+            <span class="hits">45</span>
             
 
             
 
-            <code class="ruby">        false</code>
+            <code class="ruby">    @numbers.any? do |number|</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="62">
-            
-            
-
+          <li class="covered" data-hits="434" data-linenumber="62">
+            <span class="hits">434</span>
             
 
-            <code class="ruby">      end</code>
+            
+
+            <code class="ruby">      number.char == character || number.braille == character</code>
           </li>
         </div>
       
@@ -3282,743 +3348,6 @@
       
         <div>
           <li class="never" data-hits="" data-linenumber="65">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="66">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  def valid_text?(character)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="2" data-linenumber="67">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">    @letters.any? do |letter|</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="36" data-linenumber="68">
-            <span class="hits">36</span>
-            
-
-            
-
-            <code class="ruby">      letter.char == character || letter.braille == character</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="69">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="70">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="71">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="72">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  def valid_num?(character)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="45" data-linenumber="73">
-            <span class="hits">45</span>
-            
-
-            
-
-            <code class="ruby">    @numbers.any? do |number|</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="434" data-linenumber="74">
-            <span class="hits">434</span>
-            
-
-            
-
-            <code class="ruby">      number.char == character || number.braille == character</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="75">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="76">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="77">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="78">
-            
-            
-
-            
-
-            <code class="ruby">  # def text</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="79">
-            
-            
-
-            
-
-            <code class="ruby">  #   {</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="80">
-            
-            
-
-            
-
-            <code class="ruby">  #     &quot; &quot; =&gt; [&quot;..&quot;, &quot;..&quot;, &quot;..&quot;],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="81">
-            
-            
-
-            
-
-            <code class="ruby">  #     &quot;a&quot; =&gt; [&quot;0.&quot;, &quot;..&quot;, &quot;..&quot;],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="82">
-            
-            
-
-            
-
-            <code class="ruby">  #     &quot;b&quot; =&gt; [&quot;0.&quot;, &quot;0.&quot;, &quot;..&quot;],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="83">
-            
-            
-
-            
-
-            <code class="ruby">  #     &quot;c&quot; =&gt; [&quot;00&quot;, &quot;..&quot;, &quot;..&quot;],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="84">
-            
-            
-
-            
-
-            <code class="ruby">  #     &quot;d&quot; =&gt; [&quot;00&quot;, &quot;.0&quot;, &quot;..&quot;],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="85">
-            
-            
-
-            
-
-            <code class="ruby">  #     &quot;e&quot; =&gt; [&quot;0.&quot;, &quot;.0&quot;, &quot;..&quot;],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="86">
-            
-            
-
-            
-
-            <code class="ruby">  #     &quot;f&quot; =&gt; [&quot;00&quot;, &quot;0.&quot;, &quot;..&quot;],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="87">
-            
-            
-
-            
-
-            <code class="ruby">  #     &quot;g&quot; =&gt; [&quot;00&quot;, &quot;00&quot;, &quot;..&quot;],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="88">
-            
-            
-
-            
-
-            <code class="ruby">  #     &quot;h&quot; =&gt; [&quot;0.&quot;, &quot;00&quot;, &quot;..&quot;],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="89">
-            
-            
-
-            
-
-            <code class="ruby">  #     &quot;i&quot; =&gt; [&quot;.0&quot;, &quot;0.&quot;, &quot;..&quot;],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="90">
-            
-            
-
-            
-
-            <code class="ruby">  #     &quot;j&quot; =&gt; [&quot;.0&quot;, &quot;00&quot;, &quot;..&quot;],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="91">
-            
-            
-
-            
-
-            <code class="ruby">  #     &quot;k&quot; =&gt; [&quot;0.&quot;, &quot;..&quot;, &quot;0.&quot;],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="92">
-            
-            
-
-            
-
-            <code class="ruby">  #     &quot;l&quot; =&gt; [&quot;0.&quot;, &quot;0.&quot;, &quot;0.&quot;],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="93">
-            
-            
-
-            
-
-            <code class="ruby">  #     &quot;m&quot; =&gt; [&quot;00&quot;, &quot;..&quot;, &quot;0.&quot;],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="94">
-            
-            
-
-            
-
-            <code class="ruby">  #     &quot;n&quot; =&gt; [&quot;00&quot;, &quot;.0&quot;, &quot;0.&quot;],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="95">
-            
-            
-
-            
-
-            <code class="ruby">  #     &quot;o&quot; =&gt; [&quot;0.&quot;, &quot;.0&quot;, &quot;0.&quot;],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="96">
-            
-            
-
-            
-
-            <code class="ruby">  #     &quot;p&quot; =&gt; [&quot;00&quot;, &quot;0.&quot;, &quot;0.&quot;],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="97">
-            
-            
-
-            
-
-            <code class="ruby">  #     &quot;q&quot; =&gt; [&quot;00&quot;, &quot;00&quot;, &quot;0.&quot;],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="98">
-            
-            
-
-            
-
-            <code class="ruby">  #     &quot;r&quot; =&gt; [&quot;0.&quot;, &quot;00&quot;, &quot;0.&quot;],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="99">
-            
-            
-
-            
-
-            <code class="ruby">  #     &quot;s&quot; =&gt; [&quot;.0&quot;, &quot;0.&quot;, &quot;0.&quot;],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="100">
-            
-            
-
-            
-
-            <code class="ruby">  #     &quot;t&quot; =&gt; [&quot;.0&quot;, &quot;00&quot;, &quot;0.&quot;],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="101">
-            
-            
-
-            
-
-            <code class="ruby">  #     &quot;u&quot; =&gt; [&quot;0.&quot;, &quot;..&quot;, &quot;00&quot;],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="102">
-            
-            
-
-            
-
-            <code class="ruby">  #     &quot;v&quot; =&gt; [&quot;0.&quot;, &quot;0.&quot;, &quot;00&quot;],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="103">
-            
-            
-
-            
-
-            <code class="ruby">  #     &quot;w&quot; =&gt; [&quot;.0&quot;, &quot;00&quot;, &quot;.0&quot;],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="104">
-            
-            
-
-            
-
-            <code class="ruby">  #     &quot;x&quot; =&gt; [&quot;00&quot;, &quot;..&quot;, &quot;00&quot;],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="105">
-            
-            
-
-            
-
-            <code class="ruby">  #     &quot;y&quot; =&gt; [&quot;00&quot;, &quot;.0&quot;, &quot;00&quot;],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="106">
-            
-            
-
-            
-
-            <code class="ruby">  #     &quot;z&quot; =&gt; [&quot;0.&quot;, &quot;.0&quot;, &quot;00&quot;],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="107">
-            
-            
-
-            
-
-            <code class="ruby">  #     &quot;!&quot; =&gt; [&quot;..&quot;, &quot;00&quot;, &quot;0.&quot;],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="108">
-            
-            
-
-            
-
-            <code class="ruby">  #     &quot;&#39;&quot; =&gt; [&quot;..&quot;, &quot;..&quot;, &quot;0.&quot;],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="109">
-            
-            
-
-            
-
-            <code class="ruby">  #     &quot;,&quot; =&gt; [&quot;..&quot;, &quot;0.&quot;, &quot;..&quot;],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="110">
-            
-            
-
-            
-
-            <code class="ruby">  #     &quot;-&quot; =&gt; [&quot;..&quot;, &quot;..&quot;, &quot;00&quot;],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="111">
-            
-            
-
-            
-
-            <code class="ruby">  #     &quot;.&quot; =&gt; [&quot;..&quot;, &quot;00&quot;, &quot;.0&quot;],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="112">
-            
-            
-
-            
-
-            <code class="ruby">  #     &quot;?&quot; =&gt; [&quot;..&quot;, &quot;0.&quot;, &quot;00&quot;],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="113">
-            
-            
-
-            
-
-            <code class="ruby">  #     caps: [&quot;..&quot;, &quot;..&quot;, &quot;.0&quot;]</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="114">
-            
-            
-
-            
-
-            <code class="ruby">  #   }</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="115">
-            
-            
-
-            
-
-            <code class="ruby">  # end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="116">
-            
-            
-
-            
-
-            <code class="ruby">  #</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="117">
-            
-            
-
-            
-
-            <code class="ruby">  # def number</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="118">
-            
-            
-
-            
-
-            <code class="ruby">  #   {</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="119">
-            
-            
-
-            
-
-            <code class="ruby">  #     &quot;#&quot; =&gt; [&quot;.0&quot;, &quot;.0&quot;, &quot;00&quot;],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="120">
-            
-            
-
-            
-
-            <code class="ruby">  #     &quot;0&quot; =&gt; [&quot;.0&quot;, &quot;00&quot;, &quot;..&quot;],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="121">
-            
-            
-
-            
-
-            <code class="ruby">  #     &quot;1&quot; =&gt; [&quot;0.&quot;, &quot;..&quot;, &quot;..&quot;],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="122">
-            
-            
-
-            
-
-            <code class="ruby">  #     &quot;2&quot; =&gt; [&quot;0.&quot;, &quot;0.&quot;, &quot;..&quot;],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="123">
-            
-            
-
-            
-
-            <code class="ruby">  #     &quot;3&quot; =&gt; [&quot;00&quot;, &quot;..&quot;, &quot;..&quot;],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="124">
-            
-            
-
-            
-
-            <code class="ruby">  #     &quot;4&quot; =&gt; [&quot;00&quot;, &quot;.0&quot;, &quot;..&quot;],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="125">
-            
-            
-
-            
-
-            <code class="ruby">  #     &quot;5&quot; =&gt; [&quot;0.&quot;, &quot;.0&quot;, &quot;..&quot;],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="126">
-            
-            
-
-            
-
-            <code class="ruby">  #     &quot;6&quot; =&gt; [&quot;00&quot;, &quot;0.&quot;, &quot;..&quot;],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="127">
-            
-            
-
-            
-
-            <code class="ruby">  #     &quot;7&quot; =&gt; [&quot;00&quot;, &quot;00&quot;, &quot;..&quot;],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="128">
-            
-            
-
-            
-
-            <code class="ruby">  #     &quot;8&quot; =&gt; [&quot;0.&quot;, &quot;00&quot;, &quot;..&quot;],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="129">
-            
-            
-
-            
-
-            <code class="ruby">  #     &quot;9&quot; =&gt; [&quot;.0&quot;, &quot;0.&quot;, &quot;..&quot;],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="130">
-            
-            
-
-            
-
-            <code class="ruby">  #   }</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="131">
-            
-            
-
-            
-
-            <code class="ruby">  # end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="132">
             
             
 

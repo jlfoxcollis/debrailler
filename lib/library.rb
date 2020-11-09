@@ -1,6 +1,5 @@
 require_relative './char_braille'
 require_relative './file_reader'
-require 'csv'
 
 class Library
   attr_reader :letters, :numbers, :reader
@@ -14,14 +13,16 @@ class Library
   end
 
   def create_text
-    CSV.foreach('./data/char.csv', headers: true) do |row|
+    read = @reader.from_csv('./data/char.csv')
+    read.each do |row|
       @letters << CharBraille.new(row)
     end
     @letters << CharBraille.new({"char" => ",", "line_one" => "..", "line_two" => "0.", "line_three" => ".."})
   end
 
   def create_numbers
-    CSV.foreach('./data/number.csv', headers: true) do |row|
+    read = @reader.from_csv('./data/number.csv')
+    read.each do |row|
       @numbers << CharBraille.new(row)
     end
   end
