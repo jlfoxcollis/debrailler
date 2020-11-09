@@ -17,7 +17,6 @@ class Library
     read.each do |row|
       @letters << CharBraille.new(row)
     end
-    @letters << CharBraille.new({"char" => ",", "line_one" => "..", "line_two" => "0.", "line_three" => ".."})
   end
 
   def create_numbers
